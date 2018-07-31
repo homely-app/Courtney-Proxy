@@ -27,6 +27,24 @@ app.use(
   })
 );
 
+// proxy to ricky server
+app.use(
+  '/api/rooms/:id/reviews',
+  proxy({
+    target: 'http://127.0.0.1:3002'
+    // changeOrigin: false
+  })
+);
+
+// proxy to ozge server
+app.use(
+  '/api/rooms/:id/bookings',
+  proxy({
+    target: 'http://127.0.0.1:3001'
+    // changeOrigin: false
+  })
+);
+
 // proxy to ozge server
 app.use(
   '/api/rooms/:id',
@@ -35,23 +53,5 @@ app.use(
     // changeOrigin: false
   })
 );
-
-// proxy to ricky server
-app.use(
-  '/api/reviews/:id',
-  proxy({
-    target: 'http://127.0.0.1:3002'
-    // changeOrigin: false
-  })
-);
-
-// // proxy to ozge server
-// app.use(
-//   '/api/rooms/:id',
-//   proxy({
-//     target: 'http://127.0.0.1:3003'
-//     // changeOrigin: false
-//   })
-// );
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
