@@ -24,8 +24,8 @@ app.get('/rooms/:id', function(req, res) {
 app.use(
   '/api/rooms/:id/photos',
   proxy({
-    target: process.env.PROXY_COMPONENT_MARCELLINO || 'http://127.0.0.1:3004'
-    // changeOrigin: false
+    target: process.env.PROXY_COMPONENT_MARCELLINO || 'http://127.0.0.1:3004',
+    changeOrigin: true
   })
 );
 

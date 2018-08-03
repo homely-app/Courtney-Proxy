@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js",
-    "start:dev": "nodemon server/app.js"
+    "start:dev": "nodemon server/app.js",
+    "docker:build": "docker build . -t airfec_marcellino_proxy:latest",
+    "docker:deploy": "docker tag airfec_marcellino_proxy airfec/airfec_marcellino_proxy:latest && docker push airfec/airfec_marcellino_proxy"
   },
   "repository": {
     "type": "git",
