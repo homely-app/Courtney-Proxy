@@ -33,8 +33,8 @@ app.use(
 app.use(
   '/api/rooms/:id/reviews',
   proxy({
-    target: process.env.PROXY_COMPONENT_RICKY || 'http://127.0.0.1:3002'
-    // changeOrigin: false
+    target: process.env.PROXY_COMPONENT_RICKY || 'http://127.0.0.1:3002',
+    changeOrigin: true
   })
 );
 
@@ -42,8 +42,8 @@ app.use(
 app.use(
   '/api/rooms/:id/bookings',
   proxy({
-    target: process.env.PROXY_COMPONENT_NICK || 'http://127.0.0.1:3001'
-    // changeOrigin: false
+    target: process.env.PROXY_COMPONENT_NICK || 'http://127.0.0.1:3001',
+    changeOrigin: true
   })
 );
 
