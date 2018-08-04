@@ -35,12 +35,6 @@ npm install
 
 From within the root directory:
 
-To seed database
-
-```sh
-npm db:seed
-```
-
 To run server
 
 ```sh
